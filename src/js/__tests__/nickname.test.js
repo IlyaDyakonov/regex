@@ -16,8 +16,15 @@ test('Проверка регулярного выражения', () => {
         ["user_", false],
         ["us123_-er", true],
         ["use121r", true],
+        ["use121р", false],
         ["us123__er", false],
-        ["use--121r", false]
+        ["use--121r", false],
+        ["юзер", false],
+        ["ю1з2е3р", false],
+        ["use.r", false],
+        ["use!r", false],
+        ["use%r", false],
+        ["use?r", false]
     ];
 
     nicknameTests.forEach(([nickname, expends]) => {
